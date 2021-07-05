@@ -1,0 +1,15 @@
+{
+    "name": "liamp/php-foundation",
+    "autoload": {
+        "psr-4": {
+            "Liamp\\PhpFoundation\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Shutt90",
+            "email": "78647249+Shutt90@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
