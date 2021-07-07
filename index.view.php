@@ -18,68 +18,22 @@
 <body>
     <header>
 
-            
-            <ul>
+        <ul>
 
-            <?php //suited for shorter functions without multiple html tags
-
-                foreach ($names as $name) {
-                    
-                    echo "<li>$name</li>";
-
-                }
-            ?>
-            
-            </ul>
-            
-
-            <!--for longer ones-->
-            <?php foreach ($names as $name) : ?> 
-                    <li><?= $name; ?></li>
-
-            <?php endforeach; ?>
-
-            <?php 
-
-                foreach ($animals as $animal) {
-                    echo "<li>$animal</li>";
-                }
-
-            ?>
-
-            <?php foreach ($person as $key => $feature) : ?>
-                <li><?= "$key is $feature"; ?></li>
-            <?php endforeach; ?>
-            
-            <?php foreach ($task as $heading => $value) : ?>
+            <?php foreach($tasks as $task) : ?>
 
                 <li>
-                    <strong><?= ucwords($heading) . ", " . $value; ?></strong>
-                </li>
-
-            <?php endforeach ?>
-
-            <ul>
-                <li>Name: <strong> <?= $task["title"] ?></strong></li>
-            </ul>
-
-            <li>
-                <strong>Status: </strong><?= $task["completed"] ? "Complete" : "Imcomplete"; ?> 
-            </li>
-
-            <strong> Status:</strong>
-
-            <?php if ($task["completed"]) : ?> 
-
-               Complete
-            
-            <?php else : ?>
-
                 
-                Incomplete
-            
+                <?php if ($task->completed) : ?>
+                    <strike><?= $task->description; ?></strike>
+                <?php else : ?>
+                    <?= $task->description; ?>
+                <?php endif; ?>
 
-            <?php endif; ?>
+            <?php endforeach; ?>
+
+        </ul>
+
 
     </header>
 </body>
