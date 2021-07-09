@@ -4,10 +4,12 @@
         die(var_dump($value));
     }
 
-    function canDrink ($age) {
-        if($age>=18) {
-            echo "Don't get too wasted";
-        } else {
-            echo "Not tonight mate";
-        }
+    function fetchAllTasks($pdo) {
+
+        $statement = $pdo->prepare('select * from todos');
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS, 'Task');
+
     }

@@ -1,5 +1,7 @@
 <?php
 
+require "function.php";
+
 class Task {
 
     public $description;
